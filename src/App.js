@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
+import styled from "styled-components";
+
+const CenteredContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+  font-weight: 600;
+  font-family: 'ZCOOL KuaiLe', cursive;
+  background-color: #2c3e50;
+  color: white;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <CenteredContainer>
+        5
+      </CenteredContainer>
     );
   }
 }
