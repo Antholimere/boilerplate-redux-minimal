@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
+import { connect } from "react-redux";
+import * as actions from "./redux/actions";
 
 const CenteredContainer = styled.div`
   height: 100vh;
@@ -16,12 +18,19 @@ const CenteredContainer = styled.div`
 
 class App extends Component {
   render() {
+
+    console.log(this.props)
+
     return (
-      <CenteredContainer>
-        5
+      <CenteredContainer onClick={() => this.props.incrementCounter()}>
+        {this.props.demo.counter}
       </CenteredContainer>
     );
   }
 }
 
-export default App;
+function mapStateToProps({ demo }){
+  return { demo }
+}
+
+export default connect(mapStateToProps, actions)(App);
